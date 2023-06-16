@@ -10,7 +10,7 @@ def my_funk(request):
     data = {
         
     }
-    return render(request, 'news.html', data)
+    return render(request, 'news/news.html', data)
 
 
 def uz_page(request):
@@ -18,17 +18,18 @@ def uz_page(request):
     data = {
        "yangiliklar": news 
     }
-    return render(request, 'uznews.html', data)
+    return render(request, 'news/uznews.html', data)
 
 def gl_page(request):
     data = {
         
     }
-    return render(request, 'glnews.html', data)
+    return render(request, 'news/glnews.html', data)
 
 def sp_page(request):
+    sp = SportNews.objects.all()
     data = {
-        
+        'sports': sp,
     }
-    return render(request, 'spnews.html', data)
+    return render(request, 'news/spnews.html', data)
     
