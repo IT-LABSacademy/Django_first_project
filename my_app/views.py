@@ -1,11 +1,16 @@
 from django.shortcuts import render
 from my_app.models import *
+from django.views.generic import TemplateView
+
+class HomePageView(TemplateView):
+    template_name = 'index.html'
+
 
 def my_funk(request):
     data = {
         
     }
-    return render(request, 'index.html', data)
+    return render(request, 'news.html', data)
 
 
 def uz_page(request):
@@ -26,3 +31,4 @@ def sp_page(request):
         
     }
     return render(request, 'spnews.html', data)
+    
